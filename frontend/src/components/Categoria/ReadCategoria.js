@@ -3,15 +3,15 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-const ReadEditora = () => {
+const ReadCategoria = () => {
     const { id } = useParams();
-    const [editora, setEditora] = useState([]);
+    const [categoria, setCategoria] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:8081/editora/" + id)
+        axios.get("http://localhost:8081/categoria/" + id)
             .then(res => {
                 //console.log("Valor do parametro"+id);
                 console.log(res);
-                setEditora(res.data);
+                setCategoria(res.data);
             })
             .catch(err => console.log(err))
     }, [id]);
@@ -19,7 +19,7 @@ const ReadEditora = () => {
         <div className="container">
             <div className='row'>
                 <div className='col-md-12'>
-                    <h1>Detalhes da Editora</h1>
+                    <h1>Detalhes da Categoria</h1>
                     <table className="table">
                         <thead>
                             <tr>
@@ -31,10 +31,10 @@ const ReadEditora = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{editora.id}</td>
-                                <td>{editora.descricao} </td>
-                                <td>{editora.createdAt} </td>
-                                <td>{editora.updatedAt} </td>
+                                <td>{categoria.id}</td>
+                                <td>{categoria.descricao} </td>
+                                <td>{categoria.createdAt} </td>
+                                <td>{categoria.updatedAt} </td>
                             </tr>
                         </tbody>
                     </table>
@@ -43,4 +43,4 @@ const ReadEditora = () => {
         </div>
     )
 }
-export default ReadEditora;
+export default ReadCategoria;
