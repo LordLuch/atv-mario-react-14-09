@@ -33,7 +33,7 @@ const ListEditoras = () => {
                 Editoras</h2>
             <div className='row'>
                 <div className='col-md-12'>
-                    <p><Link to="/addEditora" className="btn btnsuccess">Adicionar nova Editora</Link></p>
+                    <p><Link to="/addEditora" className="btn btn-success">Adicionar nova Editora</Link></p>
                     <table className="table table-bordered">
                         <thead>
                             <tr>
@@ -53,13 +53,13 @@ const ListEditoras = () => {
                                         <td>{editora.createdAt} </td>
                                         <td>{editora.updatedAt}
                                         </td>
-                                        <td>
+                                        <td className="d-flex gap-2">
                                             <Link
                                                 to={`/readEditora/${editora.id}`} className="btn btn-success mx2">Ler</Link>
                                             <Link
                                                 to={`/updateEditora/${editora.id}`} className="btn btn-info mx2">Editar</Link>
                                             <button
-                                                onClick={() => handleDelete(editora.id)} className="btn btndanger">Deletar</button>
+                                                onClick={() => handleDelete(editora.id)} className="btn btn-danger">Deletar</button>
                                         </td>
                                     </tr>
                                 )

@@ -20,7 +20,7 @@ function UpdateEditora() {
                 setEditora(res.data);
             })
             .catch(err => console.log(err))
-    }, []);
+    }, [id]);
     const handleClick = async (e) => {
         e.preventDefault();
         try {
@@ -67,7 +67,7 @@ function UpdateEditora() {
                     onClick={handleClick}>Alterar</button>
             </form>
             <div className='container d-flex justify-content-center'>
-                <Link to="/">Veja todas as editoras</Link>
+                <Link to="/editora">Veja todas as editoras</Link>
             </div>
         </div>
     )

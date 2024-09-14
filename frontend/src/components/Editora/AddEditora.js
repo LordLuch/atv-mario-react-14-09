@@ -36,7 +36,7 @@ const AddEditora = () => {
                         <button type="submit" className="btn btn-primary"
                             onClick={handleClick}>Cadastrar</button>
                         <br />
-                        <Link to="/editoras">Listar Editoras</Link>
+                        <Link to="/editora">Listar Editoras</Link>
                     </form>
                 </div>
             </div>
