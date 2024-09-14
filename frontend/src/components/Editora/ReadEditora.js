@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const ReadEditora = () => {
     const { id } = useParams();
     const [editora, setEditora] = useState([]);
@@ -38,6 +38,7 @@ const ReadEditora = () => {
                             </tr>
                         </tbody>
                     </table>
+                    <p><Link to="/editora">Listar editoras</Link></p>
                 </div>
             </div>
         </div>

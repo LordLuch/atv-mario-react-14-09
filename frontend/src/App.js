@@ -8,6 +8,10 @@ import ListCategoria from './components/Categoria/ListCategoria';
 import AddCategoria from './components/Categoria/AddCategoria';
 import ReadCategoria from './components/Categoria/ReadCategoria';
 import UpdateCategoria from './components/Categoria/UpdateCategoria';
+import ListAutor from './components/Autor/ListAutor';
+import AddAutor from './components/Autor/AddAutor';
+import ReadAutor from './components/Autor/ReadAutor';
+import UpdateAutor from './components/Autor/UpdateAutor';
 import Main from './components/Main';
 
 function App() {
@@ -25,6 +29,10 @@ function App() {
             <Route path="/addCategoria" element={<AddCategoria />} />
             <Route path="/readCategoria/:id" element={<ReadCategoria />} />
             <Route path="/updateCategoria/:id" element={<UpdateCategoria />} />
+            <Route path="/autor" element={<ListAutor />} />
+            <Route path="/addAutor" element={<AddAutor />} />
+            <Route path="/readAutor/:id" element={<ReadAutor />} />
+            <Route path="/updateAutor/:id" element={<UpdateAutor />} />
           </Routes>
         </BrowserRouter>
       </header>

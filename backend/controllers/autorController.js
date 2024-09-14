@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
 //Cadastra Autor (POST)
 router.post('/', async (req, res) => {
     const { nome } = req.body;
+    console.log(req.body)
     const newEdit = await Autor.create({ nome })
     res.status(200).json({ message: 'Cadastrado com sucesso' });
 });

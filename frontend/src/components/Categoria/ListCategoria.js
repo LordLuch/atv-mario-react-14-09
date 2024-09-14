@@ -29,6 +29,7 @@ const ListCategoria = () => {
     return (
         <div className="container">
             <h2 className='w-100 d-flex justify-content-center p-3'>Listando Categorias</h2>
+            <p><Link to="/">Início</Link></p>
             <div className='row'>
                 <div className='col-md-12'>
                     <p><Link to="/addCategoria" className="btn btn-success">Adicionar nova Categoria</Link></p>
@@ -45,7 +46,7 @@ const ListCategoria = () => {
                         <tbody>
                             {categorias.map((categoria) => {
                                 return (
-                                    <tr>
+                                    <tr key={`categoria-${categoria.id}`}>
                                         <td>{categoria.id}</td>
                                         <td>{categoria.descricao} </td>
                                         <td>{categoria.createdAt} </td>

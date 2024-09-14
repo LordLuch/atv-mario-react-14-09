@@ -31,6 +31,7 @@ const ListEditoras = () => {
         <div className="container">
             <h2 className='w-100 d-flex justify-content-center p-3'>Listando
                 Editoras</h2>
+            <p><Link to="/">Início</Link></p>
             <div className='row'>
                 <div className='col-md-12'>
                     <p><Link to="/addEditora" className="btn btn-success">Adicionar nova Editora</Link></p>
@@ -47,7 +48,7 @@ const ListEditoras = () => {
                         <tbody>
                             {editoras.map((editora) => {
                                 return (
-                                    <tr>
+                                    <tr key={`editora-${editora.id}`}>
                                         <td>{editora.id}</td>
                                         <td>{editora.descricao} </td>
                                         <td>{editora.createdAt} </td>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const ReadCategoria = () => {
     const { id } = useParams();
     const [categoria, setCategoria] = useState([]);
@@ -38,6 +38,7 @@ const ReadCategoria = () => {
                             </tr>
                         </tbody>
                     </table>
+                    <p><Link to="/categoria">Listar categorias</Link></p>
                 </div>
             </div>
         </div>
