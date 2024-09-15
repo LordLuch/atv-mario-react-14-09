@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { formatDate } from '../../utils/formatDate';
 const ReadLivro = () => {
     const { id } = useParams();
-    const [livro, setLivro] = useState([]);
+    const [livro, setLivro] = useState({});
     useEffect(() => {
         axios.get("http://localhost:8081/livro/" + id)
             .then(res => {
@@ -26,6 +26,9 @@ const ReadLivro = () => {
                             <tr>
                                 <th>ID</th>
                                 <th>Titulo</th>
+                                <th>Editora</th>
+                                <th>Categoria</th>
+                                <th>Autor</th>
                                 <th>Data Cadastro</th>
                                 <th>Data Alteração</th>
                             </tr>
@@ -34,6 +37,9 @@ const ReadLivro = () => {
                             <tr>
                                 <td>{livro.id}</td>
                                 <td>{livro.titulo} </td>
+                                <td>{livro.editora && livro.editora.descricao} </td>
+                                <td>{livro.categoria && livro.categoria.descricao} </td>
+                                <td>{livro.autor && livro.autor.nome} </td>
                                 <td>{formatDate(livro.createdAt)} </td>
                                 <td>{formatDate(livro.updatedAt)} </td>
                             </tr>
