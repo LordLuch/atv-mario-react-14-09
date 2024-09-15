@@ -2,9 +2,30 @@ const express = require('express');
 const router = express.Router();
 //pegamos a entidade em si dessa forma usando .Livro
 const Livro = require('../models').Livro;
+const Autor = require('../models').Autor; // Modelo Autor
+const Editora = require('../models').Editora; // Modelo Editora
+const Categoria = require('../models').Categoria; // Modelo Categoria
 //Busca Livro (GET)
 router.get('/', async (req, res) => {
-    const livros = await Livro.findAll();
+    const livros = await Livro.findAll({
+        include: [
+            {
+                model: Autor,
+                as: 'autor',
+                attributes: ['nome']
+            },
+            {
+                model: Editora,
+                as: 'editora',
+                attributes: ['descricao']
+            },
+            {
+                model: Categoria,
+                as: 'categoria',
+                attributes: ['descricao']
+            }
+        ]
+    });
     res.status(200).json(livros);
 });
 //Cadastra Livro (POST)
@@ -19,7 +40,25 @@ router.post('/', async (req, res) => {
 //Busca Por id o Livro (GET)
 router.get('/:id', async (req, res) => {
     const id = req.params;
-    const livro = await Livro.findByPk(req.params.id);
+    const livro = await Livro.findByPk(req.params.id, {
+        include: [
+            {
+                model: Autor,
+                as: 'autor',
+                attributes: ['nome']
+            },
+            {
+                model: Editora,
+                as: 'editora',
+                attributes: ['descricao']
+            },
+            {
+                model: Categoria,
+                as: 'categoria',
+                attributes: ['descricao']
+            }
+        ]
+    });
     res.status(200).json(livro);
 });
 //Deleta Livro por id (DELETE)

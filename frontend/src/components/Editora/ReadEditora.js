@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { formatDate } from '../../utils/formatDate';
 const ReadEditora = () => {
     const { id } = useParams();
     const [editora, setEditora] = useState([]);
@@ -33,8 +34,8 @@ const ReadEditora = () => {
                             <tr>
                                 <td>{editora.id}</td>
                                 <td>{editora.descricao} </td>
-                                <td>{editora.createdAt} </td>
-                                <td>{editora.updatedAt} </td>
+                                <td>{formatDate(editora.createdAt)} </td>
+                                <td>{formatDate(editora.updatedAt)} </td>
                             </tr>
                         </tbody>
                     </table>

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { formatDate } from '../../utils/formatDate';
 const ListCategoria = () => {
     const [categorias, setCategorias] = useState([]);
 
@@ -49,8 +50,8 @@ const ListCategoria = () => {
                                     <tr key={`categoria-${categoria.id}`}>
                                         <td>{categoria.id}</td>
                                         <td>{categoria.descricao} </td>
-                                        <td>{categoria.createdAt} </td>
-                                        <td>{categoria.updatedAt}
+                                        <td>{formatDate(categoria.createdAt)} </td>
+                                        <td>{formatDate(categoria.updatedAt)}
                                         </td>
                                         <td className="d-flex gap-2">
                                             <Link

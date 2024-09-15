@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { formatDate } from '../../utils/formatDate';
 const ReadCategoria = () => {
     const { id } = useParams();
     const [categoria, setCategoria] = useState([]);
@@ -33,8 +34,8 @@ const ReadCategoria = () => {
                             <tr>
                                 <td>{categoria.id}</td>
                                 <td>{categoria.descricao} </td>
-                                <td>{categoria.createdAt} </td>
-                                <td>{categoria.updatedAt} </td>
+                                <td>{formatDate(categoria.createdAt)} </td>
+                                <td>{formatDate(categoria.updatedAt)} </td>
                             </tr>
                         </tbody>
                     </table>

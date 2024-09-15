@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { formatDate } from '../../utils/formatDate';
 const ListEditoras = () => {
     const [editoras, setEditoras] = useState([]);
     //Listar Editoras
@@ -51,8 +52,8 @@ const ListEditoras = () => {
                                     <tr key={`editora-${editora.id}`}>
                                         <td>{editora.id}</td>
                                         <td>{editora.descricao} </td>
-                                        <td>{editora.createdAt} </td>
-                                        <td>{editora.updatedAt}
+                                        <td>{formatDate(editora.createdAt)} </td>
+                                        <td>{formatDate(editora.updatedAt)}
                                         </td>
                                         <td className="d-flex gap-2">
                                             <Link
